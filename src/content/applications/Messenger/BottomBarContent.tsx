@@ -27,8 +27,8 @@ function BottomBarContent() {
   const theme = useTheme();
 
   const user = {
-    name: 'Catherine Pike',
-    avatar: '/static/images/avatars/1.jpg'
+    name: 'Diego Pino',
+    avatar: '/static/images/avatars/4.jpg'
   };
 
   return (

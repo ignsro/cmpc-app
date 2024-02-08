@@ -6,6 +6,13 @@ import SidebarLayout from 'src/layouts/SidebarLayout';
 import BaseLayout from 'src/layouts/BaseLayout';
 
 import SuspenseLoader from 'src/components/SuspenseLoader';
+import Rooms from './content/pages/Components/Rooms';
+import BCM2 from './content/pages/Sections/BCM';
+import {BCM, Machines} from './content/pages/Components/Rooms/bcm';
+import { Log } from './content/pages/Components/Machine/log';
+import { Dashboard } from '@mui/icons-material';
+import DashboardDetentions from './content/dashboards/Logs/Detentions';
+
 
 const Loader = (Component) => (props) =>
   (
@@ -83,10 +90,10 @@ const routes: RouteObject[] = [
     children: [
       {
         path: '/',
-        element: <Overview />
+        element: <DashboardDetentions />
       },
       {
-        path: 'overview',
+        path: 'dashboard',
         element: <Navigate to="/" replace />
       },
       {
@@ -117,6 +124,38 @@ const routes: RouteObject[] = [
       {
         path: '*',
         element: <Status404 />
+      }
+    ]
+  },
+  {
+    path: 'section',
+    element: <SidebarLayout />,
+    children: [
+      {
+        path:'',
+        element: <Navigate to="conversion" replace />
+      },
+      {
+        path: 'conversion',
+        element: <Rooms />
+      },
+      {
+        path: "bcm",
+        element: <BCM2/>
+      },
+      {
+        path: "log",
+        element: <Log />
+      }
+    ]
+  },
+  {
+    path: "machine",
+    element: <SidebarLayout />,
+    children: [
+      {
+        path: "log",
+        element: <Log /> 
       }
     ]
   },

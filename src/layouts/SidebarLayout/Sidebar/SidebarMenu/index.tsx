@@ -180,24 +180,7 @@ function SidebarMenu() {
   return (
     <>
       <MenuWrapper>
-        <List component="div">
-          <SubMenuWrapper>
-            <List component="div">
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/overview"
-                  startIcon={<DesignServicesTwoToneIcon />}
-                >
-                  Overview
-                </Button>
-              </ListItem>
-            </List>
-          </SubMenuWrapper>
-        </List>
-        <List
+        {/* <List
           component="div"
           subheader={
             <ListSubheader component="div" disableSticky>
@@ -231,8 +214,89 @@ function SidebarMenu() {
               </ListItem>
             </List>
           </SubMenuWrapper>
+        </List> */}
+        <List
+          component="div"
+          subheader={
+            <ListSubheader component="div" disableSticky>
+              Dashboard
+            </ListSubheader>
+          }
+        >
+          <SubMenuWrapper>
+          <List component="div">
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/section/bcm"
+                  startIcon={<TableChartTwoToneIcon />}
+                >
+                  Detenciones
+                </Button>
+              </ListItem>
+            </List>
+          </SubMenuWrapper>
         </List>
         <List
+          component="div"
+          subheader={
+            <ListSubheader component="div" disableSticky>
+              Salas
+            </ListSubheader>
+          }
+        >
+          <SubMenuWrapper>
+            <List component="div">
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/section/bcm"
+                  startIcon={<TableChartTwoToneIcon />}
+                >
+                  BCM
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/rooms/cut"
+                  startIcon={<TableChartTwoToneIcon />}
+                >
+                  Sala de corte
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/rooms/conversion"
+                  startIcon={<TableChartTwoToneIcon />}
+                >
+                  UTECO
+                </Button>
+              </ListItem>
+              {/* <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/machine/log"
+                  startIcon={<TableChartTwoToneIcon />}
+                >
+                  Registro
+                </Button>
+              </ListItem> */}
+            </List>
+          </SubMenuWrapper>
+        </List>
+        {/* <List
           component="div"
           subheader={
             <ListSubheader component="div" disableSticky>
@@ -255,8 +319,8 @@ function SidebarMenu() {
               </ListItem>
             </List>
           </SubMenuWrapper>
-        </List>
-        <List
+        </List> */}
+        {/* <List
           component="div"
           subheader={
             <ListSubheader component="div" disableSticky>
@@ -402,7 +466,7 @@ function SidebarMenu() {
               </ListItem>
             </List>
           </SubMenuWrapper>
-        </List>
+        </List> */}
         <List
           component="div"
           subheader={
