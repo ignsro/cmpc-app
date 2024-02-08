@@ -180,7 +180,7 @@ function SidebarMenu() {
   return (
     <>
       <MenuWrapper>
-        <List
+        {/* <List
           component="div"
           subheader={
             <ListSubheader component="div" disableSticky>
@@ -210,6 +210,30 @@ function SidebarMenu() {
                   startIcon={<MmsTwoToneIcon />}
                 >
                   Messenger
+                </Button>
+              </ListItem>
+            </List>
+          </SubMenuWrapper>
+        </List> */}
+        <List
+          component="div"
+          subheader={
+            <ListSubheader component="div" disableSticky>
+              Dashboard
+            </ListSubheader>
+          }
+        >
+          <SubMenuWrapper>
+          <List component="div">
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/section/bcm"
+                  startIcon={<TableChartTwoToneIcon />}
+                >
+                  Detenciones
                 </Button>
               </ListItem>
             </List>
@@ -258,7 +282,7 @@ function SidebarMenu() {
                   UTECO
                 </Button>
               </ListItem>
-              <ListItem component="div">
+              {/* <ListItem component="div">
                 <Button
                   disableRipple
                   component={RouterLink}
@@ -268,11 +292,11 @@ function SidebarMenu() {
                 >
                   Registro
                 </Button>
-              </ListItem>
+              </ListItem> */}
             </List>
           </SubMenuWrapper>
         </List>
-        <List
+        {/* <List
           component="div"
           subheader={
             <ListSubheader component="div" disableSticky>
@@ -295,8 +319,8 @@ function SidebarMenu() {
               </ListItem>
             </List>
           </SubMenuWrapper>
-        </List>
-        <List
+        </List> */}
+        {/* <List
           component="div"
           subheader={
             <ListSubheader component="div" disableSticky>
@@ -442,7 +466,7 @@ function SidebarMenu() {
               </ListItem>
             </List>
           </SubMenuWrapper>
-        </List>
+        </List> */}
         <List
           component="div"
           subheader={

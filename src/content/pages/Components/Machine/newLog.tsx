@@ -8,6 +8,7 @@ const LOCAL_VAR = {
   CLIENT_NAME: 'clientName',
   WORK_SHIFT: 'workShift',
   OPERATOR: 'operatorName',
+  ORDER_NUMBER: 'orderNumber',
 }
 
 export const machines = [
@@ -119,7 +120,33 @@ const categories = [
       },
       {
         value: '13',
-        label: 'Regulación Bag Machine'
+        label: 'Regulación Bag Machine',
+        sub: [
+          {
+            label: 'Lenguetas',
+            value: 6
+          },
+          {
+            label: 'Desdos del tambor',
+            value: 7
+          },
+          {
+            label: 'Desdos de apertura',
+            value: 8
+          },
+          {
+            label: 'Cuchillas plegadoras',
+            value: 9
+          },
+          {
+            label: 'Cambios de resorte ',
+            value: 10
+          },
+          {
+            label: 'Otros',
+            value: 11
+          },
+        ],
       },
       {
         value: '14',
@@ -173,6 +200,120 @@ const categories = [
       }
     ]
   },
+  {
+    value: '6',
+    label: 'Pruebas',
+    sub: [
+      {
+        value: '22',
+        label: 'Pruebas'
+      }
+    ]
+  },
+  {
+    value: '7',
+    label: 'Esperas',
+    sub: [
+      {
+        value: '24',
+        label: 'Calidad de Impresión del rollo'
+      },
+      {
+        value: '25',
+        label: 'Espera de insumos'
+      },
+      {
+        value: '26',
+        label: 'Defecto de material'
+      },
+      {
+        value: '27',
+        label: 'Esperas Insumos Mtto'
+      }
+    ]
+  },
+  {
+    value: '8',
+    label: 'Perdidas organizacionales',
+    sub: [
+      {
+        value: '28',
+        label: 'Cambios en el programa'
+      },
+      {
+        value: '29',
+        label: 'Colación'
+      },
+      {
+        value: '30',
+        label: 'Capacitación'
+      },
+      {
+        value: '31',
+        label: 'Reunión'
+      },
+      {
+        value: '32',
+        label: 'Vestuario'
+      },
+      {
+        value: '33',
+        label: 'Ausencia o Dotación'
+      },
+      {
+        value: '34',
+        label: 'Cambio de turno'
+      },
+    ]
+  },
+  {
+    value: '9',
+    label: 'Perdida velocidad',
+    sub: [
+      {
+        value: '35',
+        label: 'Perdida de velocidad'
+      }
+    ]
+  },
+  {
+    value: '10',
+    label: 'Pequeñas paradas',
+    sub: [
+      {
+        value: '36',
+        label: 'Pequeñas paradas'
+      }
+    ]
+  },
+  {
+    value: '11',
+    label: 'Mantención planeada',
+    sub: [
+      {
+        value: '37',
+        label: 'Preventiva'
+      },
+      {
+        value: '38',
+        label: 'Correctiva'
+      }
+    ]
+  },
+  {
+    value: '12',
+    label: 'Falla Maquina > 10 min',
+    sub: [
+      {
+        value: '39',
+        label: 'Falla Eléctrica'
+      },
+      {
+        value: '40',
+        label: 'Falla Mecánica'
+      }
+    ]
+  },
 ]
 
 interface props {
@@ -188,6 +329,7 @@ const NewLog: React.FC<props> = ({addLog}) => {
   const [subCategory, setSubCategory] = useState('')
   const [subZone, setSubZone] = useState('')
   const [operator, setOperator] = useState('')
+  const [orderNumber, setOrderNumber] = useState('')
 
   const handleMachineChange = (event) => {
     setMachine(event.target.value)
@@ -223,6 +365,12 @@ const NewLog: React.FC<props> = ({addLog}) => {
     localStorage.setItem(LOCAL_VAR.CLIENT_NAME, newValue);
   }
 
+  const handleOrderNumberChange = (event) => {
+    const newValue = event.target.value;
+    setOrderNumber(newValue);
+    localStorage.setItem(LOCAL_VAR.ORDER_NUMBER, newValue);
+  }
+
   const handleTimeElapsedChange = (event) => {
     const time = parseInt(event.target.value)
     setTimeElapsed(time);
@@ -253,6 +401,11 @@ const NewLog: React.FC<props> = ({addLog}) => {
     const operatorName = localStorage.getItem(LOCAL_VAR.OPERATOR)
     if (operatorName) {
       setOperator(operatorName);
+    }
+
+    const orderNumber = localStorage.getItem(LOCAL_VAR.ORDER_NUMBER)
+    if (orderNumber) {
+      setOrderNumber(orderNumber);
     }
   }, []);
 
@@ -307,6 +460,14 @@ const NewLog: React.FC<props> = ({addLog}) => {
                   label="Cliente"
                   onChange={handleClientChange}
                   value={client}
+                >
+              </TextField>
+              <TextField
+                  required
+                  id="unproductive-select-orderNumber"
+                  label="Order de fabricación"
+                  onChange={handleOrderNumberChange}
+                  value={orderNumber}
                 >
               </TextField>
             </div>

@@ -10,6 +10,8 @@ import Rooms from './content/pages/Components/Rooms';
 import BCM2 from './content/pages/Sections/BCM';
 import {BCM, Machines} from './content/pages/Components/Rooms/bcm';
 import { Log } from './content/pages/Components/Machine/log';
+import { Dashboard } from '@mui/icons-material';
+import DashboardDetentions from './content/dashboards/Logs/Detentions';
 
 
 const Loader = (Component) => (props) =>
@@ -88,7 +90,7 @@ const routes: RouteObject[] = [
     children: [
       {
         path: '/',
-        element: <BCM machines={Machines} />
+        element: <DashboardDetentions />
       },
       {
         path: 'dashboard',

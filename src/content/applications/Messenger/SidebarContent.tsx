@@ -94,8 +94,8 @@ const TabsContainerWrapper = styled(Box)(
 
 function SidebarContent() {
   const user = {
-    name: 'Catherine Pike',
-    avatar: '/static/images/avatars/1.jpg',
+    name: 'Diego Pino',
+    avatar: '/static/images/avatars/4.jpg',
     jobtitle: 'Software Developer'
   };
 
@@ -217,7 +217,7 @@ function SidebarContent() {
           <List disablePadding component="div">
             <ListItemWrapper selected>
               <ListItemAvatar>
-                <Avatar src="/static/images/avatars/1.jpg" />
+                <Avatar src="/static/images/avatars/4.jpg" />
               </ListItemAvatar>
               <ListItemText
                 sx={{
@@ -311,7 +311,7 @@ function SidebarContent() {
           <List disablePadding component="div">
             <ListItemWrapper>
               <ListItemAvatar>
-                <Avatar src="/static/images/avatars/1.jpg" />
+                <Avatar src="/static/images/avatars/4.jpg" />
               </ListItemAvatar>
               <ListItemText
                 sx={{
@@ -432,7 +432,7 @@ function SidebarContent() {
                 component={RouterLink}
                 to="#"
                 alt="Remy Sharp"
-                src="/static/images/avatars/1.jpg"
+                src="/static/images/avatars/4.jpg"
               />
             </Tooltip>
             <Tooltip arrow title="View profile for Travis Howard">
