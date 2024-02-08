@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 import { Machine } from 'src/models/machine';
 import BASE_URL from '.';
 
-const API = axios.create({baseURL:  process.env.API_URL})
+const API = axios.create({baseURL:  process.env.REACT_APP_API_URL})
 
 const MachineService = {
   async getAll(): Promise<Machine[]> {
